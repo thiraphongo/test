@@ -1,11 +1,13 @@
 let express = require('express')
 const app = express()
 let bodyParser = require('body-parser')
+let cors = require('cors')
 const {sequelize} = require('./models')
 const config = require('./config/config')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(cors())
 
 require('./routes')(app)
 
@@ -51,3 +53,4 @@ app.delete('/user/:userId', function (req, res) {
     res.send('ทำการลบผู้ใช้งาน: ' + req.params.userId + ' : ' +
     JSON.stringify(req.body))
 })
+
