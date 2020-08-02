@@ -53,4 +53,3 @@ app.delete('/user/:userId', function (req, res) {
     res.send('ทำการลบผู้ใช้งาน: ' + req.params.userId + ' : ' +
     JSON.stringify(req.body))
 })
-
