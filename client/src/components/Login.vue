@@ -11,6 +11,7 @@
 </template>
 <script>
 import AuthenService from '@/services/AuthenService'
+
 export default {
     data () {
         return {
@@ -26,11 +27,13 @@ export default {
                     email: this.email,
                     password: this.password
                 })
+
                 this.$store.dispatch('setToken', response.data.token)
                 this.$store.dispatch('setUser', response.data.user)
                 this.$router.push({
                     name: 'users'
                 })
+
                 console.log(response)
             } catch (error) {
                 console.log(error)
