@@ -8,6 +8,7 @@ const config = require('./config/config')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors())
+app.use('./assets', express.static('public'))
 
 require('./userPassport')
 require('./routes')(app)

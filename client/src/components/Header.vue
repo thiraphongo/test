@@ -7,7 +7,6 @@
                 <li><router-link :to="{name: 'comments'}" >Comments</router-link></li>
                 <li><router-link :to="{name: 'login'}" >Login</router-link></li>
                 <li><a v-on:click.prevent="logout" href="#">Logout</a></li>
-                <li><router-link :to="{name: 'blogs'}" >Blogs</router-link></li>
             </ul>
             <div class="clearfix"></div>
         </div>

@@ -16,7 +16,7 @@
             blog</button>
             <button v-on:click="navigateTo('/blog/edit/'+ blog.id)">แก้ไข
             blog</button>
-            <button v-on:click="deleteBlog(blog)">ลบขอ้ มูล</button>
+            <button v-on:click="deleteBlog(blog)">ลบข้อมูล</button>
             </p>
             <hr>
         </div>
