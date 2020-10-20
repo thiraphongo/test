@@ -19,6 +19,12 @@ import BlogCreate from '@/components/Blogs/CreateBlog'
 import BlogEdit from '@/components/Blogs/EditBlog'
 import BlogShow from '@/components/Blogs/ShowBlog'
 
+// Products
+import ProductIndex from '@/components/Products/Index'
+import ProductCreate from '@/components/Products/CreateProduct'
+import ProductEdit from '@/components/Products/EditProduct'
+import ProductShow from '@/components/Products/ShowProduct'
+
 // Upload Testing
 import Upload from '@/components/Utils/Upload'
 
@@ -75,6 +81,27 @@ export default new Router({
     name: 'blog',
     component: BlogShow
     },
+    // Producs
+    {
+      path: '/Products',
+      name: 'Products',
+      component: ProductIndex
+      },
+      {
+      path: '/Produtc/create',
+      name: 'Product-create',
+      component: ProductCreate
+      },
+      {
+      path: '/Product/edit/:ProductId',
+      name: 'Product-edit',
+      component: ProductEdit
+      },
+      {
+      path: '/Product/:ProductId',
+      name: 'Product',
+      component: ProductShow
+      },
     // comments
     {
     path: '/comments',

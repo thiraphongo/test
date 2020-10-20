@@ -3,6 +3,7 @@ const UserAuthenController = require('./controllers/UserAuthenController')
 const isAuthenController = require('./authen/isAuthenController')
 const BlogController = require('./controllers/BlogController')
 const CommentController = require('./controllers/CommentController')
+const ProductController = require('./controllers/ProductController')
 
 let multer = require("multer")
 // upload section
@@ -88,6 +89,29 @@ module.exports = (app) => {
     app.get('/comments',
         CommentController.index
     )
+
+    // product route
+    // create product
+    app.post('/product',
+        ProductController.create
+    )
+    // edit product, suspend, active
+    app.put('/product/:productId',
+        ProductController.put
+    )
+    // delete product
+    app.delete('/product/:productId',
+        ProductController.remove
+    )
+    // get product by id
+    app.get('/product/:productId',
+        ProductController.show
+    )
+    // get all comment
+    app.get('/products',
+        ProductController.index
+    )
+
 
     // upload
     app.post("/upload", function(req, res) {
