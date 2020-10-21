@@ -24,7 +24,7 @@ data-target="#navcol-1">
 <li role="presentation"><router-link :to="{name: 'products'}" >T-SHIRTS</router-link></li> 
 <li role="presentation"><router-link :to="{name: 'users'}" >Users</router-link></li>
 <li role="presentation"><router-link :to="{name: 'login'}" >Login</router-link></li>
-<li role="presentation"><router-link :to="{name: 'logout'}" >Logout</router-link></li>
+<li role="presentation"><router-link :to="{name: 'login'}" >Logout</router-link></li>
 
 </ul>
 </div>

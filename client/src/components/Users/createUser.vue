@@ -1,6 +1,6 @@
 <template>
 <center>
-    
+    <div class="bg"> <br>
     <div class="product-header ">
         <h1>Create User</h1>
         <form v-on:submit.prevent = "createUser">
@@ -17,6 +17,7 @@
             <p>email: {{ user.email }}</p>
             <p>password: {{ user.password }}</p>
         </div>
+    </div> <br><br><br>
     </div>
 </center>
 </template>
@@ -55,5 +56,7 @@ export default {
  margin-left: auto;
  margin-right: auto;
 }
-
+.bg{
+    background: silver;
+}
 </style>
