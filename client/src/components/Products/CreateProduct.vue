@@ -1,15 +1,30 @@
 <template>
   <div class="container blog-wrapper">
     <main-header navsel="back"></main-header>
-    <h1>สร้างโพสต์</h1>
-    <form v-on:submit.prevent = "createBlog">
+    <h1>สร้างproduct</h1>
+    <form v-on:submit.prevent = "createproduct">
       <p>
-        <label for="" class="control-label">หัวข้อ: </label>
-        <input type="text" v-model="blog.title" class="form-control">        
+        <label class="control-label">ชื่อ product: </label>
+        <input type="text" v-model="product.name" class="form-control">        
+      </p>
+      <p>
+        <label class="control-label">รสชาติ :</label>
+        <input type="text" v-model="product.taste" class="form-control">
+      </p>
+      <p>
+        <label class="control-label">price :</label>
+        <input type="text" v-model="product.price" class="form-control">
+      </p>
+      <p>
+        <label class="control-label">สถานะ :</label>
+        <input type="text" v-model="product.status" class="form-control">
+      </p>
+      <p>
+        รูปสินค้า 
       </p>
       <transition name="fade">
-        <div class="thumbnail-pic" v-if="blog.thumbnail != 'null'">
-          <img class="img-thumbnail" :src="BASE_URL+blog.thumbnail" alt="thumbnail">
+        <div class="thumbnail-pic" v-if="product.thumbnail != 'null'">
+          <img class="img-thumbnail" :src="BASE_URL+product.thumbnail" alt="thumbnail">
         </div>
       </transition>
       <form enctype="multipart/form-data" novalidate>
@@ -39,22 +54,17 @@
         </transition-group>
         <div class="clearfix"></div>
       </div>  
-      <p><strong>เนื้อหา: </strong></p>
-      <p><vue-ckeditor v-model.lazy="blog.content" :config="config" @blur="onBlur($event)" @focus="onFocus($event)" /></p>
+       
       <p>
-        <label class="control-label">ประเภท :</label>
-        <input type="text" v-model="blog.category" class="form-control">
-      </p> 
-      <p>
-        <button class="btn btn-success" type="submit">สร้างโพสต์</button>
-        <button class="btn btn-default" type="button" v-on:click="navigateTo('/blogs')">กลับ</button>
+        <button class="btn btn-success" type="submit">สร้างProduct</button>
+        <button class="btn btn-default" type="button" v-on:click="navigateTo('/products')">กลับ</button>
       </p> 
     </form>   
     <br>    
   </div>
 </template>
 <script>
-import BlogsService from '@/services/BlogsService'
+import ProductService from '@/services/ProductService'
 import VueCkeditor from "vue-ckeditor2"
 import UploadService from '@/services/UploadService'
 import {mapState} from 'vuex'
@@ -72,13 +82,13 @@ export default {
   },
   data () {
     return {
-      blog: {
-        title: '',
+      product: {
+        name: '',
+        tast :'',
         thumbnail: 'null',
         pictures: [],
-        content: '',
-        category: '',
-        status: 'Suspend'
+        price : '',
+        status: ''
       },
       config: {
         toolbar: [
@@ -103,7 +113,7 @@ export default {
     },
     useThumbnail (filename) {     
       console.log(filename) 
-      this.blog.thumbnail = filename
+      this.product.thumbnail = filename
     },
     async delFile (material){
       let result = confirm("Want to delete?")
@@ -178,12 +188,12 @@ export default {
     clearUploadResult: function(){            
       setTimeout(() => this.reset(), 5000);
     },
-    async createBlog () {
-      this.blog.pictures = JSON.stringify(this.pictures)
+    async createproduct () {
+      this.product.pictures = JSON.stringify(this.pictures)
       try {
-        await BlogsService.post(this.blog)
+        await ProductService.post(this.product)
         this.$router.push({
-          name: 'blogs'
+          name: 'products'
         })
       } catch (err) {
         console.log(err)

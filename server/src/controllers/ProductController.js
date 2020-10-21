@@ -1,13 +1,33 @@
 const { Product } = require('../models')
 module.exports = {
-    // get all product
-    async index(req, res) {
+    // indx with serach blog
+    async index (req, res) {
         try {
-            const products = await Product.findAll()
+            let products = null
+            const search = req.query.search
+            // console.log('search key: ' + search)
+            if (search) {
+                products = await Product.findAll({
+                    where: {
+                        $or: [
+                            'name',
+                        ].map(key => ({
+                            [key]: {
+                                $like: `%${search}%`,
+                            }
+                        })),
+                    },
+                    order: [['updatedAt', 'DESC']]
+                })
+            } else {
+                products = await Product.findAll({
+                    order: [['updatedAt', 'DESC']]
+                })
+            }
             res.send(products)
         } catch (err) {
             res.status(500).send({
-                error: 'The comments information was incorrect'
+                 error: 'an error has occured trying to fetch the blogs'
             })
         }
     },

@@ -81,25 +81,25 @@ export default new Router({
     name: 'blog',
     component: BlogShow
     },
-    // Producs
+    // Products
     {
-      path: '/Products',
-      name: 'Products',
+      path: '/products',
+      name: 'products',
       component: ProductIndex
       },
       {
-      path: '/Produtc/create',
-      name: 'Product-create',
+      path: '/product/create',
+      name: 'product-create',
       component: ProductCreate
       },
       {
-      path: '/Product/edit/:ProductId',
-      name: 'Product-edit',
+      path: '/product/edit/:productId',
+      name: 'product-edit',
       component: ProductEdit
       },
       {
-      path: '/Product/:ProductId',
-      name: 'Product',
+      path: '/product/:productId',
+      name: 'product',
       component: ProductShow
       },
     // comments
