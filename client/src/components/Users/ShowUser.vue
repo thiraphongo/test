@@ -1,11 +1,13 @@
 <template>
+<div class="bg"> <br>
     <div class="product-header ">
         <h1>ดูข้อมูลผู้ใช้งาน</h1> <br>
         <h3>id: {{ user.id }}</h3> <br>
         <h4>ชื่อ-นามสกุล : {{ user.name }} - {{ user.lastname }}</h4> <br>
         <h4>email: {{ user.email }}</h4> <br> 
         <h4>password: {{ user.password }}</h4> <br>
-    </div>
+    </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 </template>
 <script>
 import UsersService from '@/services/UsersService'
@@ -63,4 +65,7 @@ export default {
  margin-right: auto;
 }
 
+.bg{
+    background: silver;
+}
 </style>

@@ -1,4 +1,5 @@
 <template>
+<div class="bg">
   <div class="container blog-wrapper">
     <main-header navsel="back"></main-header>
     <h1>สร้างโพส</h1>
@@ -64,6 +65,7 @@
     </form>   
     <br>    
   </div>
+</div>
 </template>
 <script>
 import ProductService from '@/services/ProductService'
@@ -385,5 +387,8 @@ ul.pictures li img {
 /* thumbnail */
 .thumbnail-pic img{
  width:200px;
+}
+.bg{
+    background: silver;
 }
 </style>

@@ -7,6 +7,9 @@
 <a class="navbar-brand navbar-link" href="#" v-on:click.prevent="navigateTo('/dashboard')">
 <img src="../assets/longxx.jpg" id="logo">
 </a>
+<br><br><br>
+
+
 <button class="navbar-toggle collapsed" data-toggle="collapse"
 data-target="#navcol-1">
 <span class="sr-only">Toggle navigation</span>
@@ -14,10 +17,11 @@ data-target="#navcol-1">
 <span class="icon-bar"></span>
 </button>
 </div> 
-
+ 
 <div class="collapse navbar-collapse" id="navcol-1">
 <ul class="nav navbar-nav navbar-right">
-<li role="presentation"><router-link :to="{name: 'products'}" >T-SHIRTS</router-link></li>
+   
+<li role="presentation"><router-link :to="{name: 'products'}" >T-SHIRTS</router-link></li> 
 <li role="presentation"><router-link :to="{name: 'users'}" >Users</router-link></li>
 <li role="presentation"><router-link :to="{name: 'login'}" >Login</router-link></li>
 <li role="presentation"><router-link :to="{name: 'logout'}" >Logout</router-link></li>

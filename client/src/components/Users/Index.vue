@@ -1,4 +1,5 @@
 <template>
+<div class="bg"> <br>
     <div class="product-header " >
         <h2>Get all users</h2>
         <h4>จำนวนผู้ใช้งาน {{users.length}}</h4>
@@ -15,7 +16,8 @@
                 <p><button class="btn btn-sm btn-warning" v-on:click="logout">Logout</button></p>
             <hr>
         </div>
-    </div>
+    </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 </template>
 <script>
     import UsersService from '@/services/UsersService'
@@ -90,5 +92,7 @@
  margin-left: auto;
  margin-right: auto;
 }
-
+.bg{
+    background: silver;
+}
 </style>

@@ -1,10 +1,8 @@
 <template>
-    <div >
-        <div class="product-header ">
+    <div class="bg">
+        <div class="product-header  "> <br>
  <h2>ชื่อร้าน : LONGXX26</h2> <div>
- <form>
- <input type="text" v-model="search" placeholder="Search">
- </form>
+ 
 </div>
  <div><br>
  <button class="btn btn-sm btn-warning"  v-on:click="navigateTo('/product/create')">create
@@ -20,6 +18,7 @@ product</button>
 
 
 
+
  <div v-for="product in products" v-bind:key="product.id" class="product-list">
  <!-- <p>id: {{ product.id }}</p> -->
  <div class="product-pic">
@@ -32,8 +31,8 @@ product</button>
 
  <h3>{{ product.name }}</h3>
  <div v-html="product.taste.slice(0,200)"></div>
- <p><strong>price :</strong> {{ product.status }}</p>
- 
+ <p><strong>Price:</strong> {{ product.status }}</p>
+ <p><strong>วันที่ :</strong> {{ product.createdAt }}</p>
  <!-- <p>status: {{ product.status }}</p> -->
  
  <p>
@@ -150,5 +149,7 @@ product</button>
  margin-left: auto;
  margin-right: auto;
 }
-
+.bg{
+    background: silver;
+}
 </style>

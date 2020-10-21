@@ -1,4 +1,5 @@
 <template>
+<div class="bg"> <br>
    <center> 
        
        <div class="product-header " >
@@ -8,9 +9,9 @@
             <p>Username: <br><input type="text" v-model="email" class="form-control" /></p>
             <p>Password: <br><input type="password" v-model="password" class="form-control" /></p>
             <p><button class="btn btn-sm btn-info" type="submit">Login</button></p>
-            <div class="error" v-if="error">{{error}}</div>
+            <div class="error" v-if="error">{{error}}</div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </form>
-    </div> </center>
+    </div> </center> </div>
 </template>
 <script>
 import AuthenService from '@/services/AuthenService'
@@ -59,4 +60,7 @@ export default {
  margin-right: auto;
 }
 
+.bg{
+    background: silver;
+}
 </style>

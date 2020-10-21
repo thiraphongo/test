@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg"> <br>
         <h1>Edit product</h1>
         <form v-on:submit.prevent = "editproduct">
             <p>name: <input type="text" v-model="product.name"></p>
@@ -11,8 +11,8 @@
             <button  class="btn btn-success" type="submit">update product</button>
             <button class="btn btn-default" v-on:click="navigateTo('/products')">กลับ</button>
             </p>
-        </form>
-    </div>
+        </form> <br><br><br><br><br><br>
+    </div> 
 </template>
 <script>
 import ProductService from '@/services/ProductService'
@@ -174,4 +174,7 @@ export default {
 }
 </script>
 <style scoped>
+.bg{
+    background: silver;
+}
 </style>

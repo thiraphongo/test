@@ -1,5 +1,6 @@
 <template>
-    <div class="container blog-wrapper" >
+<div class="bg"><br>
+    <div class="container blog-wrapper" > 
         <div class="product-header ">
         <main-header navsel="back"></main-header>
         
@@ -32,6 +33,7 @@
         </center>
     </div>
     </div>
+</div>
 </template>
 <script>
     import ProductService from '@/services/ProductService'
@@ -103,9 +105,13 @@ box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 .hero {
 margin-top: 80px;
 border-radius: 5px;
-background: silver;
+background: black;
 height:250px;
 color:white;
 padding: 20px;
+}
+
+.bg{
+    background: silver;
 }
 </style>

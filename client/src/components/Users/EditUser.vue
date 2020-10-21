@@ -1,4 +1,5 @@
 <template>
+<div class="bg"> <br>
     <div class="product-header " >
         <h1>แก้ไขข้อมูลผู้ใช้งาน</h1>
         <form v-on:submit.prevent = "editUser">
@@ -16,7 +17,8 @@
             <p>password: {{ user.password }}</p>
             <p></p>
         </div>
-    </div>
+    </div> <br><br><br><br><br><br><br><br><br>
+</div>
 </template>
 <script>
 import UsersService from '@/services/UsersService'
@@ -91,5 +93,7 @@ export default {
  margin-left: auto;
  margin-right: auto;
 }
-
+.bg{
+    background: silver;
+}
 </style>
