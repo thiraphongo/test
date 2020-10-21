@@ -1,12 +1,14 @@
 <template>
-    <div>
+<center>
+    
+    <div class="product-header ">
         <h1>Create User</h1>
         <form v-on:submit.prevent = "createUser">
-            <p>name: <input type="text" v-model="user.name"></p>
-            <p>lastname: <input type="text" v-model="user.lastname"></p>
-            <p>email: <input type="text" v-model="user.email"></p>
-            <p>password: <input type="text" v-model="user.password"></p>
-            <p><button type="submit">create user</button></p>
+            <p>name: <input type="text" v-model="user.name" class="form-control"></p> <br>
+            <p>lastname: <input type="text" v-model="user.lastname" class="form-control"></p> <br>
+            <p>email: <input type="text" v-model="user.email" class="form-control"></p> <br>
+            <p>password: <input type="text" v-model="user.password" class="form-control" Width="50%"></p> <br>
+            <p><button type="submit">create user</button></p> <br>
         </form>
         <hr>
         <div>
@@ -16,6 +18,7 @@
             <p>password: {{ user.password }}</p>
         </div>
     </div>
+</center>
 </template>
 <script>
 import UsersService from '@/services/UsersService'
@@ -47,4 +50,10 @@ export default {
 }
 </script>
 <style scoped>
+.product-header {
+ max-width: 900px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
 </style>

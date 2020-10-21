@@ -1,14 +1,15 @@
 <template>
-    <div>
+    <div class="container blog-wrapper">
         <h1>Edit product</h1>
         <form v-on:submit.prevent = "editproduct">
             <p>name: <input type="text" v-model="product.name"></p>
-            <p>taste: <input type="text" v-model="product.taste"></p>
+            <label class="control-label">Detail :</label>
+            <p><vue-ckeditor v-model.lazy="product.taste" :config="config" @blur="onBlur($event)" @focus="onFocus($event)" /></p>
             <p>price: <input type="text" v-model="product.price"></p>
             <p>status: <input type="text" v-model="product.status"></p>
             <p>
-            <button type="submit">update product</button>
-            <button v-on:click="navigateTo('/products')">กลับ</button>
+            <button class="btn btn-sm btn-warning" type="submit">update product</button>
+            <button  class="btn btn-sm btn-danger" v-on:click="navigateTo('/products')">กลับ</button>
             </p>
         </form>
     </div>

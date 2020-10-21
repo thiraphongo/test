@@ -1,16 +1,36 @@
 <template>
-    <div>
-        <h1>Show Blog</h1>
-        <p>id: {{ product.id }}</p>
-        <p>name: {{ product.name }}</p>
-        <p>taste: {{ product.taste }}</p>
-        <p>price: {{ product.price }}</p>
-        <p>status: {{ product.status }}</p>
+    <div class="container blog-wrapper" >
+        <div class="product-header ">
+        <main-header navsel="back"></main-header>
+        
+        <div class="hero-wrapper">
+<div class="hero">
+<img src="@/assets/longxx26.jpg" class="logo" style="float:left">
+<br><br><br>
+<h1>ชื่อร้าน Longxx.26</h1>
+<h2>IG : Longxx.26 </h2>
+
+</div>
+</div>
+        <br>
+        <center>
+        <h1>Show product</h1>
+        <p><b>Title: </b> {{ product.name }} </p>
+        <transition name="fade">
+ <div class="thumbnail-pic" v-if="product.thumbnail != 'null'">
+ <img :src="BASE_URL+product.thumbnail" alt="thumbnail">
+ </div>
+ </transition>
+        <div v-html="product.taste.slice(0,200)"></div>
+        <p><b>price: </b> {{ product.price }}</p>
+        <p><b> status: </b>{{ product.status }}</p>
         <p>
-        <button v-on:click="navigateTo('/product/edit/'+ product.id)">แก้ไข
-        blog</button>
-        <button v-on:click="navigateTo('/products')">กลับ </button>
+        <button class="btn btn-sm btn-warning" v-on:click="navigateTo('/product/edit/'+ product.id)">แก้ไข Product</button>
+        <button class="btn btn-sm btn-danger" v-on:click="navigateTo('/products')">กลับ</button>
+        
         </p>
+        </center>
+    </div>
     </div>
 </template>
 <script>
@@ -18,6 +38,7 @@
     export default {
         data () {
             return {
+                BASE_URL: "http://localhost:8081/assets/uploads/",
                 product: null
             }
         },
@@ -37,4 +58,54 @@
     }
 </script>
 <style scoped>
+.empty-product {
+ width: 100%;
+ text-align: center;
+ padding:10px;
+ background:darksalmon;
+ color:white;
+}
+/* thumbnail */
+.thumbnail-pic img{
+ width: 200px;
+ padding: 5px 10px 0px 0px;
+}
+.product-info {
+ float: left;
+}
+.product-pic {
+ float: left;
+}
+.clearfix {
+ clear: both;
+}
+.product-list {
+ border:solid 1px #dfdfdf;
+ margin-bottom: 10px;
+ max-width: 900px;
+ margin-left: auto;
+ margin-right: auto;
+ padding: 5px;
+ box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+}
+.product-header {
+ max-width: 900px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.blog-wrapper {
+margin-top:20px;
+padding: 40px;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.hero {
+margin-top: 80px;
+border-radius: 5px;
+background: silver;
+height:250px;
+color:white;
+padding: 20px;
+}
 </style>

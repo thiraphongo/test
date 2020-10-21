@@ -1,26 +1,28 @@
 <template>
-    <div>
-        <div class="blog-header">
- <h2>ส่วนจัดการสินค้า</h2>
- <div>
+    <div >
+        <div class="product-header ">
+ <h2>ชื่อร้าน : LONGXX26</h2> <div>
  <form>
  <input type="text" v-model="search" placeholder="Search">
  </form>
 </div>
- <div>
- <button v-on:click="navigateTo('/product/create')">create
+ <div><br>
+ <button class="btn btn-sm btn-warning"  v-on:click="navigateTo('/product/create')">create
 product</button>
+<br><br>
  <strong> จํานวน product: </strong> {{products.length}}</div>
  <br>
  </div>
 
- <div v-if="products.length === 0" class="empty-blog">
- *** ไม่มีขอ้ มูล***
+ <div v-if="products.length === 0" class="empty-product">
+ *** ไม่มีข้อมูล***
  </div>
 
- <div v-for="product in products" v-bind:key="product.id" class="blog-list">
- <!-- <p>id: {{ blog.id }}</p> -->
- <div class="blog-pic">
+
+
+ <div v-for="product in products" v-bind:key="product.id" class="product-list">
+ <!-- <p>id: {{ product.id }}</p> -->
+ <div class="product-pic">
  <transition name="fade">
  <div class="thumbnail-pic" v-if="product.thumbnail != 'null'">
  <img :src="BASE_URL+product.thumbnail" alt="thumbnail">
@@ -29,15 +31,17 @@ product</button>
  </div>
 
  <h3>{{ product.name }}</h3>
- <p><strong>tast:</strong> {{ product.taste }}</p>
- <p><strong>status:</strong> {{ product.status }}</p>
- <p><strong>Create:</strong> {{ product.createdAt }}</p>
- <!-- <p>status: {{ blog.status }}</p> -->
+ <div v-html="product.taste.slice(0,200)"></div>
+ <p><strong>price :</strong> {{ product.status }}</p>
+ <p><strong>สถานะ :</strong> {{ product.createdAt }}</p>
+ <!-- <p>status: {{ product.status }}</p> -->
+ 
  <p>
- <button v-on:click="navigateTo('/product/'+ product.id)">ดู blog</button>
- <button v-on:click="navigateTo('/product/edit/'+ product.id)">แกไ้ข blog</button>
- <button v-on:click="deleteBlog(product)">ลบข้อมูล</button>
- </p>
+<button class="btn btn-sm btn-info" v-on:click="navigateTo('/product/'+product.id)">ดูสินค้า</button>
+<button class="btn btn-sm btn-warning" v-on:click="navigateTo('/product/edit/'+ product.id)">แก้ไขสินค้า</button>
+<button class="btn btn-sm btn-danger" v-on:click="deleteBlog(product)">ลบข้อมูล</button>
+</p>
+
  </div>
 
  <div class="clearfix"></div>
@@ -111,7 +115,7 @@ product</button>
     }
 </script>
 <style scoped>
-.empty-blog {
+.empty-product {
  width: 100%;
  text-align: center;
  padding:10px;
@@ -123,16 +127,16 @@ product</button>
  width: 200px;
  padding: 5px 10px 0px 0px;
 }
-.blog-info {
+.product-info {
  float: left;
 }
-.blog-pic {
+.product-pic {
  float: left;
 }
 .clearfix {
  clear: both;
 }
-.blog-list {
+.product-list {
  border:solid 1px #dfdfdf;
  margin-bottom: 10px;
  max-width: 900px;
@@ -141,9 +145,10 @@ product</button>
  padding: 5px;
  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
 }
-.blog-header {
+.product-header {
  max-width: 900px;
  margin-left: auto;
  margin-right: auto;
 }
+
 </style>

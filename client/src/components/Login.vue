@@ -1,13 +1,16 @@
 <template>
-    <div>
+   <center> 
+       
+       <div class="product-header " >
+       
         <h1>User Login</h1>
         <form v-on:submit.prevent="onLogin">
-            <p>Username: <input type="text" v-model="email" /></p>
-            <p>Password: <input type="password" v-model="password" /></p>
-            <p><button type="submit">Login</button></p>
+            <p>Username: <br><input type="text" v-model="email" class="form-control" /></p>
+            <p>Password: <br><input type="password" v-model="password" class="form-control" /></p>
+            <p><button class="btn btn-sm btn-info" type="submit">Login</button></p>
             <div class="error" v-if="error">{{error}}</div>
         </form>
-    </div>
+    </div> </center>
 </template>
 <script>
 import AuthenService from '@/services/AuthenService'
@@ -49,4 +52,11 @@ export default {
     .error {
         color:red;
     }
+
+    .product-header {
+ max-width: 900px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
 </style>

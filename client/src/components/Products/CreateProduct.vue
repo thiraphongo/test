@@ -1,25 +1,14 @@
 <template>
   <div class="container blog-wrapper">
     <main-header navsel="back"></main-header>
-    <h1>สร้างproduct</h1>
+    <h1>สร้างโพส</h1>
     <form v-on:submit.prevent = "createproduct">
       <p>
-        <label class="control-label">ชื่อ product: </label>
+        <label class="control-label">Title: </label>
         <input type="text" v-model="product.name" class="form-control">        
       </p>
-      <p>
-        <label class="control-label">รสชาติ :</label>
-        <input type="text" v-model="product.taste" class="form-control">
-      </p>
-      <p>
-        <label class="control-label">price :</label>
-        <input type="text" v-model="product.price" class="form-control">
-      </p>
-      <p>
-        <label class="control-label">สถานะ :</label>
-        <input type="text" v-model="product.status" class="form-control">
-      </p>
-      <p>
+     
+ <p>
         รูปสินค้า 
       </p>
       <transition name="fade">
@@ -52,6 +41,19 @@
             <button class="btn btn-xs btn-danger" v-on:click.prevent="delFile(picture)">ลบ</button>
           </li>        
         </transition-group>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+      <p>
+        <label class="control-label">Detail :</label>
+        <p><vue-ckeditor v-model.lazy="product.taste" :config="config" @blur="onBlur($event)" @focus="onFocus($event)" /></p>
+      
+     
+      <p>
+        <label class="control-label">สถานะ :</label>
+        <input type="text" v-model="product.status" class="form-control">
+      </p>
+     
         <div class="clearfix"></div>
       </div>  
        
