@@ -50,7 +50,7 @@
       
      
       <p>
-        <label class="control-label">สถานะ :</label>
+        <label class="control-label">Price :</label>
         <input type="text" v-model="product.status" class="form-control">
       </p>
      

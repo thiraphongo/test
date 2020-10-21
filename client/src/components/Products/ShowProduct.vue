@@ -20,7 +20,7 @@
  <div class="thumbnail-pic" v-if="product.thumbnail != 'null'">
  <img :src="BASE_URL+product.thumbnail" alt="thumbnail">
  </div>
- </transition>
+ </transition> <br>
         <div v-html="product.taste.slice(0,200)"></div>
         <p><b>price: </b> {{ product.price }}</p>
         <p><b> status: </b>{{ product.status }}</p>

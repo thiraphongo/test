@@ -33,7 +33,7 @@ product</button>
  <h3>{{ product.name }}</h3>
  <div v-html="product.taste.slice(0,200)"></div>
  <p><strong>price :</strong> {{ product.status }}</p>
- <p><strong>สถานะ :</strong> {{ product.createdAt }}</p>
+ 
  <!-- <p>status: {{ product.status }}</p> -->
  
  <p>
